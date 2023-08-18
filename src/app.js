@@ -11,5 +11,5 @@ function displayTemperature(response) {
   windElement.innerHTML = Math.round(response.data.wind.speed);
 }
 let apiKey = "bc74ea37ddf606c1c06f602d803cbb3a";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=NewYork&appid=${apiKey}&units=imperial`;
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=London&appid=${apiKey}&units=imperial`;
 axios.get(apiUrl).then(displayTemperature);
