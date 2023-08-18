@@ -40,6 +40,16 @@ function displayTemperature(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
-let apiKey = "bc74ea37ddf606c1c06f602d803cbb3a";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=London&appid=${apiKey}&units=imperial`;
-axios.get(apiUrl).then(displayTemperature);
+function search(city) {
+  let apiKey = "bc74ea37ddf606c1c06f602d803cbb3a";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=London&appid=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(displayTemperature);
+}
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+}
+search("London");
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
