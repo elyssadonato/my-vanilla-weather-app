@@ -12,16 +12,17 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
   </head>
   <body>
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="weather-app">
           <div class="overview">
-            <h1>Chandler</h1>
+            <h1 id="city"></h1>
             <ul>
               <li>Thursday 14:29</li>
-              <li>Clear</li>
+              <li id="weather-description"></li>
             </ul>
           </div>
           <div class="row">
@@ -39,9 +40,8 @@
             </div>
             <div class="col-6">
               <ul>
-                <li>Precipitation: 15%</li>
-                <li>Humidity: 16%</li>
-                <li>Wind: 13 km/h</li>
+                <li>Humidity: <span id="humidity"></span></li>
+                <li>Wind: <span id="wind"></span> km/h</li>
               </ul>
             </div>
           </div>
